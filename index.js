@@ -66,6 +66,8 @@ app.get('/profile', isLoggedIn, function(req, res) {
 });
 
 app.use('/auth', require('./controllers/auth'));
+app.use('/location', require('./controllers/location')); 
+app.use('/city', require('./controllers/newcity')); 
 
 var server = app.listen(process.env.PORT || 3000);
 
