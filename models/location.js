@@ -9,7 +9,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   location.associate = function(models) {
     // associations can be defined here
-    models.location.belongsTo(models.city)
   };
   return location;
 };

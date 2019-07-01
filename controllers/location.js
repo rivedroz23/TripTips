@@ -15,8 +15,15 @@ router.post('/newlocation', function(req,res) {
     })
 });
 
-router.get('/newlocation', (req, res) => {
-    res.render('newlocation');
+router.get('/newlocation',  function (req, res) {
+    res.render('location/newlocation');
+});
+
+router.get('/:id/edit', function(req,res) {
+    db.location.findByPk(parseInt(req.params.id))
+    .then(function(data) {
+        res.render('./location/edit', {location:data});
+    })
 });
 
 
