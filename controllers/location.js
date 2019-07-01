@@ -27,7 +27,7 @@ router.get('/:id/edit', function(req,res) {
 });
 
 
-router.put('/newlocation/:id', function(req,res) {
+router.put('/:id', function(req,res) {
     db.location.update({
      name: req.body.name,
      headlineText: req.body.headlineText,
@@ -37,7 +37,7 @@ router.put('/newlocation/:id', function(req,res) {
     }, {
         where: {id: parseInt(req.params.id)}
     }).then(function(data) {
-        res.redirect('/newlocation' + req.params.id);
+        res.redirect('/location/' + req.params.id);
  
     })
     

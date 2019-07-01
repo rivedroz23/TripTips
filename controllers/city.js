@@ -32,14 +32,14 @@ router.get('/:id/edit', function(req,res) {
     
 
 
-router.put('/city/:id', function(req,res) {
-    db.location.update({
+router.put('/:id', function(req,res) {
+    db.city.update({
      name: req.body.name,
-    tagLine: req.body.tagLine
+     tagLine: req.body.tagLine
     }, {
         where: {id: parseInt(req.params.id)}
     }).then(function(data) {
-        res.redirect('/newcity' + req.params.id);
+        res.redirect('/city/' + req.params.id);
  
     })
     

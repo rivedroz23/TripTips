@@ -1,13 +1,13 @@
-<h2>Update location(place) info</h2>
+<h2>Update location info</h2>
 
 <form method='POST' action='/location/<%= location.id %>/?_method=PUT' >
 <label for='name'>Name</label>
 <input type='text' name='name' placeholder = 'edit location name' value='<%= location.name %>' />
-<input type='submit' value='Update my city'>
+<input type='submit' value='Update my location'>
 
 
 <label for='headlineText'>Headline Text</label>
-<input type='text' name='locationName' placeholder = 'edit headline text' value='<%= location.headlineText %>' />
+<input type='text' name='headlineText' placeholder = 'edit headline text' value='<%= location.headlineText %>' />
 <input type='submit' value='Update my headline'>
 </form> 
 
@@ -17,7 +17,7 @@
 </form> 
 
 <label for='headlineUrl'>Headline Pic</label>
-<input type='text' name='locationName' placeholder = 'edit headline text' value='<%= location.headlineUrl %>' />
+<input type='text' name='headlineUrl' placeholder = 'edit headline text' value='<%= location.headlineUrl %>' />
 <input type='submit' value='Update my Picture'>
 </form> 
 
