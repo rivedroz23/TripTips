@@ -1,6 +1,22 @@
 const express = require('express');
 const db = require('../models');
+const methodOverride = require('method-override');
+
 const router = express.Router();
+
+router.get('/newlocation',  function (req, res) {
+    res.render('location/newlocation');
+});
+
+// GETS one location
+router.get('/:id', function(req,res) {
+    db.location.findByPk(parseInt(req.params.id))
+    .then(function(data) {
+        res.render('location/show', {location:data});
+    });
+
+})
+
 
 router.post('/newlocation', function(req,res) {
     // console.log('req', req.body);
@@ -15,9 +31,6 @@ router.post('/newlocation', function(req,res) {
     })
 });
 
-router.get('/newlocation',  function (req, res) {
-    res.render('location/newlocation');
-});
 
 router.get('/:id/edit', function(req,res) {
     db.location.findByPk(parseInt(req.params.id))
@@ -37,7 +50,7 @@ router.put('/:id', function(req,res) {
     }, {
         where: {id: parseInt(req.params.id)}
     }).then(function(data) {
-        res.redirect('/location/' + req.params.id);
+        res.redirect('/location' + req.params.id);
  
     })
     

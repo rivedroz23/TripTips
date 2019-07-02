@@ -11,15 +11,22 @@ router.get('/newcity',  function (req, res) {
     res.render('city/newcity');
 });
 
+// Get /:id - show route - gets one city
+router.get('/:id', function(req,res) {
+    db.city.findByPk(parseInt(req.params.id))
+    .then(function(data) {
+        res.render('city/show', {city:data});
+    });
+
+})
+
 router.post('/newcity', function(req,res) {
     db.city.create({
        name: req.body.name, 
        tagLine: req.body.tagLine
     }).then(function(data) {
         res.redirect('/city/newcity');
-        /*res.status(200).json({
-            message: 'new city works'
-        })*/
+    
     })
 });
 
