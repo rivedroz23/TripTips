@@ -11,6 +11,7 @@ const flash = require('connect-flash');
 const isLoggedIn = require('./middleware/isLoggedIn');
 const helmet = require('helmet');
 const methodOverride = require('method-override');
+// const mapbox = require('@mapbox/mapbox-sdk/services/geocoding');
 
 // This is only used by the session store
 const db = require('./models');
@@ -31,6 +32,7 @@ app.use(require('morgan')('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + "/public"));
 app.use(ejsLayouts);
+app.set('layout extractScripts', true);
 app.use(helmet());
 app.use(methodOverride('_method'));
 
@@ -59,9 +61,25 @@ app.use(function(req, res, next) {
   next();
 })
 
+const mapbox = require('@mapbox/mapbox-sdk/services/geocoding');
+const geocodingClient = mapbox({
+    accessToken: process.env.MAPBOX_PUBLIC_KEY
+})
+
 app.get('/', function(req, res) {
   res.render('index');
 });
+
+app.get('/map', function(req,res) {
+  geocodingClient.forwardGeocode({
+    query: "Seattle, Washington"
+}).send().then(function(response) {
+    let results = response.body.features.map(function(feature) {
+        return feature.center
+    })
+    res.render('map', {results})
+ })
+})
 
 app.get('/profile', isLoggedIn, function(req, res) {
   res.render('profile');

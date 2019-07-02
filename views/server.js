@@ -12,6 +12,19 @@ const geocodingClient = mapbox({
 app.set('view engine', 'ejs');
 app.use(layouts);
 app.set('layout extractScripts', true);
-app.use(express.static(__dirname + '/static'));
+app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({extended: false}));
 
+
+app.get('/', function(req,res) {
+    geocodingClient.forwardGeocode({
+        query: "Seattle Washington " + location
+    }).send().then(function(response) {
+        let results = response.body.features.map(function(feature) {
+            return feature.center
+        })
+        // res.render('map', {results})
+        res.json(results)
+     })
+    
+})
