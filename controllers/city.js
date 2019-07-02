@@ -33,11 +33,19 @@ router.post('/newcity', function(req,res) {
 router.get('/:id/edit', function(req,res) {
     db.city.findByPk(parseInt(req.params.id))
     .then(function(data) {
-        res.render('./city/edit', {city:data});
+        res.render('city/edit', {city:data});
     })
 });
-    
 
+
+router.delete('/:id', function(req,res) {
+    db.city.destroy({
+        where: {id: parseInt(req.params.id)}
+    }).then(function(data) {
+        res.redirect('/city/newcity');
+    });  
+ });
+    
 
 router.put('/:id', function(req,res) {
     db.city.update({
@@ -51,6 +59,8 @@ router.put('/:id', function(req,res) {
     })
     
  });
+
+ 
 
 
 module.exports = router;
