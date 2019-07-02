@@ -39,6 +39,14 @@ router.get('/:id/edit', function(req,res) {
     })
 });
 
+router.delete('/:id', function(req,res) {
+    db.location.destroy({
+        where: {id: parseInt(req.params.id)}
+    }).then(function(data) {
+        res.redirect('/location/newlocation');
+    });  
+ });
+
 
 router.put('/:id', function(req,res) {
     db.location.update({
@@ -50,10 +58,12 @@ router.put('/:id', function(req,res) {
     }, {
         where: {id: parseInt(req.params.id)}
     }).then(function(data) {
-        res.redirect('/location' + req.params.id);
+        res.redirect('/location/' + req.params.id);
  
     })
     
  });
+
+
 
 module.exports = router;

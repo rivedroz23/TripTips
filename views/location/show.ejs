@@ -11,4 +11,9 @@
     <p> Your LOCATION INFO has been updated!</p>
 
 </body>
+
+<form method="POST" action="/location/<%= location.id %>/?_method=DELETE">
+    <input type="submit" value="DELETE">
+
+</form>
 </html>
