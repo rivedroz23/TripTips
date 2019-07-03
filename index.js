@@ -71,8 +71,9 @@ app.get('/', function(req, res) {
 });
 
 app.get('/map', function(req,res) {
+
   geocodingClient.forwardGeocode({
-    query: "Seattle, Washington"
+    query: "Seattle,Wa"
 }).send().then(function(response) {
     let results = response.body.features.map(function(feature) {
         return feature.center

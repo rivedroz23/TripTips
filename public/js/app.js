@@ -1,4 +1,10 @@
 console.log('hello mapbox');
+markerCoords = [
+    [-122.355507,47.616512],
+    [-122.410347,47.655598]
+]
+
+
 console.log(markerCoords)
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoicml2ZWRyb3oyMyIsImEiOiJjanhleTdvOTkwM2hhM3RvN3d1eDhwbWx5In0.NvMVM2quRBrxFO8ERJdQyQ';
