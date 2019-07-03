@@ -11,6 +11,28 @@ var map = new mapboxgl.Map({
 })
 
 
+const geoJSON = {
+    "type": "FeatureCollection",
+    "features": markerCoords.map( function(coord) {
+        let marker = {
+            "type": "Feature",
+            "properties": {
+                "iconsize": [60,60]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": coord
+            }
+        }
+        return marker
+    })
+}
+
+geoJSON.features.forEach( function(feature) {
+    new mapboxgl.Marker({anchor: 'center'})
+    .setLngLat(feature.geometry.coordinates)
+    .addTo(map)
+})
 
 
 
@@ -19,34 +41,5 @@ var map = new mapboxgl.Map({
 
 
 
-map.addLayer({
-    "id": "3d-buildings",
-    "source": "composite",
-    "source-layer": "building",
-    "filter": ["==", "extrude", "true"],
-    "type": "fill-extrusion",
-    "minzoom": 12,
-    "paint": {
-        "fill-extrusion-color": "#009e60",
-        "fill-extrusion-height": [
-            "interpolate",
-            ["linear"],
-            ["zoom"],
-            12,
-            0,
-            12.05,
-            ["get", "height"]
-        ],
-        "fill-extrusion-base": [
-            "interpolate",
-            ["linear"],
-            ["zoom"],
-            12,
-            0,
-            12.05,
-            ["get", "min_height"]
-        ],
-        "fill-extrusion-opacity": 0.6
-    }
-}, labelLayerId)
+
 
