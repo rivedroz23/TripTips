@@ -1,10 +1,42 @@
 console.log('hello mapbox');
-markerCoords = [
+var selectedCity; 
+
+//Check your mother fucking city and then wrap markerCoords in an if statement
+//if seattle markerCoords have coordinates for Seattle, else they have for Tbilisi
+
+//setCity("San Francisco"); 
+
+function setCity(city) {
+ if (city) {
+	 console.log("I am in setCity function yo"); 
+ selectedCity = city; 
+ } else {
+	console.log("I am in setCity else statement yo"); 
+ }
+}
+
+
+
+if (selectedCity === "Seattle") {
+	console.log("I am always in here bro"); 
+	markerCoords = [
+		[-122.355507,47.616512],
+		[-122.410347,47.655598],
+		[-122.3355,47.6077]
+	]
+} else {
+	console.log("The value o selectedCity is " + selectedCity); 
+	console.log("Yo I should be working"); 
+	markerCoords = [
+		[41.870087,43.735725]
+	]
+}
+
+/*markerCoords = [
     [-122.355507,47.616512],
     [-122.410347,47.655598],
-    [-122.3355,47.6077]
-]
-
+	[-122.3355,47.6077]
+]*/
 
 console.log(markerCoords)
 

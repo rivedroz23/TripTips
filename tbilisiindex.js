@@ -70,27 +70,15 @@ app.get('/', function(req, res) {
   res.render('index');
 });
 
-app.get('/seattlemap', function(req,res) {
+app.get('/map', function(req,res) {
 
   geocodingClient.forwardGeocode({
-    query: "Seattle,Wa"
+    query: "Tblisi,Georgia"
 }).send().then(function(response) {
     let results = response.body.features.map(function(feature) {
         return feature.center
     })
-    res.render('seattlemap', {results})
- })
-})
-
-app.get('/tbilisimap', function(req,res) {
-
-  geocodingClient.forwardGeocode({
-    query: "Tbilisi"
-}).send().then(function(response) {
-    let results = response.body.features.map(function(feature) {
-        return feature.center
-    })
-    res.render('tbilisimap', {results})
+    res.render('map', {results})
  })
 })
 
