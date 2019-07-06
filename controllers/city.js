@@ -3,11 +3,15 @@ const db = require('../models');
 const methodOverride = require('method-override');
 const router = express.Router();
 
-router.get('/newcity',  function (req, res) {
-    /*res.status(200).json({
-        message: 'new city works'
+router.get('/city', function(req,res) {
+    db.city.findAll().then(function(data) {
+        res.render('city/index', {city:data});
+    });
+});
 
-    })*/    
+
+
+router.get('/newcity',  function (req, res) {
     res.render('city/newcity');
 });
 
@@ -19,6 +23,7 @@ router.get('/:id', function(req,res) {
     });
 
 })
+
 
 router.post('/newcity', function(req,res) {
     db.city.create({
