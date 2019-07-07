@@ -101,6 +101,8 @@ app.get('/profile', isLoggedIn, function(req, res) {
 app.use('/auth', require('./controllers/auth'));
 app.use('/location', require('./controllers/location')); 
 app.use('/city', require('./controllers/city'));
+app.use('/admin', require('./controllers/admin')); 
+
 
 var server = app.listen(process.env.PORT || 3000);
 

@@ -2,8 +2,9 @@ html,body {
     margin: 0;
     padding: 0;
     background-color: whitesmoke;
-    color:red;
-    font-family: 'Yellowtail', cursive;
+    color: black;
+    /*font-family: 'Yellowtail', cursive;*/
+    font-family: 'Oswald', sans-serif;
     font-size: 25px;
   }
   
@@ -24,7 +25,20 @@ html,body {
   .head {
     border-style: solid;
     background-color: red;
-    font-family: 'Yellowtail', cursive;
+   /* font-family: 'Yellowtail', cursive;*/
+    font-family: 'Oswald', sans-serif;
     color: whitesmoke;
     font-size: 50px;
+  }
+
+  .headline {
+      height: 60%;
+      width: 60%;
+
+  }
+
+  img {
+    height: 100%;
+    width: 100%; 
+
   }

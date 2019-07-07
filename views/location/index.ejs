@@ -1,7 +1,14 @@
 <h1>Welcome to TripTips</h1>
 
-<ul>
+<!--<ul>
         <% location.forEach( function(location) { %>
         <li>  <a href ="/location/<%= location.id %>" ><%= location.name %></a></li>
        <% }); %>
-</ul>
+</ul> --> 
+
+<% location.forEach( function(location) { %>
+       <div class="headline"><h4><%= location.name %></h4>
+            <h2><%= location.headlineText %></h2>
+            <img src="/img/<%= location.headlineUrl %>" >
+</div>
+       <% }); %>

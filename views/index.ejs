@@ -3,11 +3,7 @@
 <% if (!currentUser) { %>
     <nav>
     <a href="/auth/signup">Signup</a> |
-    <a href="/auth/login">Login</a> |
-    <a href="/city/newcity">New City</a> |
-    <a href="/location/newlocation">New Location</a> 
-    <a href="/location/?cityId=8" onclick="setCity(Seattle)">Seattle</a>
-    <a href="/location/city/9" onclick="setCity(Tbilisi)">Tbilisi</a>
+    <a href="/auth/login">Login</a> | |
     </nav>
 
 <% } else { %>
@@ -16,10 +12,9 @@
 <p>Hello, <%= currentUser.name %></p>
 <a href="/auth/logout">Logout</a>
 <a href="/profile">Profile</a>
-<a href="/city/newcity">New City</a>
-<a href="/location/newlocation">New Location</a>
-<a href="/location/?cityId=8" >Seattle</a>
-<a href="/location/?cityId=9" >Tbilisi</a>
+<a href="/location/city/8" onclick="setCity(Seattle)">Seattle</a>
+<a href="/location/city/9" onclick="setCity(Tbilisi)">Tbilisi</a>
+<a href="/admin/index">Admin</a> | 
 
 
 <% } %>
