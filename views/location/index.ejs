@@ -1,0 +1,7 @@
+<h1>Welcome to TripTips</h1>
+
+<ul>
+        <% location.forEach( function(location) { %>
+        <li>  <a href ="/location/<%= location.id %>" ><%= location.name %></a></li>
+       <% }); %>
+</ul>

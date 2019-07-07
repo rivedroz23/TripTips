@@ -1,2 +1,8 @@
 <h1>Welcome to TripTips</h1>
 <p>Please check out all of our cities!</p>
+
+<ul>
+        <% city.forEach( function(city) { %>
+        <li>  <a href ="/city/<%= city.id %>" ><%= city.name %></a></li>
+       <% }); %>
+</ul>
