@@ -24,7 +24,7 @@ html,body {
 
   .head {
     border-style: solid;
-    background-color: red;
+    background-color: #E63644;
    /* font-family: 'Yellowtail', cursive;*/
     font-family: 'Oswald', sans-serif;
     color: whitesmoke;
@@ -41,4 +41,22 @@ html,body {
     height: 100%;
     width: 100%; 
 
+  }
+
+  .mapbtn {
+  background-color:#E63644;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #E63644;
+  }
+
+  .mapbtn2 {
+    background-color: white;
+    border: none;
+    color: #E63644;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #E63644;
   }
