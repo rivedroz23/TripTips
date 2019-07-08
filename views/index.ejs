@@ -1,14 +1,15 @@
-<h2>Home</h2>
-
+<!--<h2>Home</h2>-->
 <% if (!currentUser) { %>
-    <nav>
-    <a href="/auth/signup">Signup</a> |
-    <a href="/auth/login">Login</a> | 
-    </nav>
+    <body class="home">
+    <div class="centered1"><button class = 'mapbtn2' onclick="window.location.href = '/auth/signup';">Signup</button><br>&nbsp;<br></div>
+    <div class="centered2"><button class = 'mapbtn' onclick="window.location.href = '/auth/login';">Login</button></div>
+   <!-- <a href="/auth/signup">Signup</a> |
+    <a href="/auth/login">Login</a> | -->
+</body>
 
 <% } else { %>
 
-
+<body class="nohome">
 <p>Hello, <%= currentUser.name %></p>
 <a href="/auth/logout">Logout</a> |
 <a href="/profile">Profile</a> |
@@ -16,7 +17,9 @@
 <a href="/location/city/9" onclick="setCity(Tbilisi)">Tbilisi</a> |
 <a href="/admin/index">Admin</a> 
 
+<div class="seattle" ><img src="/img/seattle.png"></div><div class="tbilisi"><img src="/img/tbilisi.png"></div>
 
+</body>
 <% } %>
 
 

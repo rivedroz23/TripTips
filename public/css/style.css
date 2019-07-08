@@ -37,9 +37,15 @@ html,body {
 
   }
 
-  img {
+  #feed {
     height: 100%;
     width: 100%; 
+
+  }
+
+  #logo {
+    height: 255;
+    width: 83; 
 
   }
 
@@ -50,6 +56,10 @@ html,body {
   border-radius: 10px;
   border-style: solid;
   border-color: #E63644;
+  width: 255px;
+  height: 66px;
+  display: flex;
+        justify-content: center;
   }
 
   .mapbtn2 {
@@ -59,4 +69,30 @@ html,body {
     border-radius: 10px;
     border-style: solid;
     border-color: #E63644;
+    width: 255px;
+    height: 66px;
+    display: flex;
+        justify-content: center;
+        padding:       10px 100px;
+  }
+
+  .home {
+    background-image: url("/img/trip_tips_hero.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  /*nav { display: flex;
+        justify-content: center;
+
+  }*/
+
+  .centered1 {  display: flex;
+    justify-content: center;
+
+  }
+  .centered2 {  display: flex;
+    justify-content: center;
+
   }
