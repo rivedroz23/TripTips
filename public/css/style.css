@@ -58,8 +58,7 @@ html,body {
   border-color: #E63644;
   width: 255px;
   height: 66px;
-  display: flex;
-        justify-content: center;
+  
   }
 
   .mapbtn2 {
@@ -71,9 +70,7 @@ html,body {
     border-color: #E63644;
     width: 255px;
     height: 66px;
-    display: flex;
-        justify-content: center;
-        padding:       10px 100px;
+    
   }
 
   .home {

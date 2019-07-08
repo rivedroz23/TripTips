@@ -13,12 +13,14 @@
 <p>Hello, <%= currentUser.name %></p>
 <a href="/auth/logout">Logout</a> |
 <a href="/profile">Profile</a> |
-<a href="/location/city/8" onclick="setCity(Seattle)">Seattle</a> |
-<a href="/location/city/9" onclick="setCity(Tbilisi)">Tbilisi</a> |
+<!--<a href="/location/city/8" onclick="setCity(Seattle)">Seattle</a> |
+<a href="/location/city/9" onclick="setCity(Tbilisi)">Tbilisi</a> |-->
 <a href="/admin/index">Admin</a> 
 
-<div class="seattle" ><img src="/img/seattle.png"></div><div class="tbilisi"><img src="/img/tbilisi.png"></div>
 
+    <div>
+<div class="seattle" style="display: inline-block;" ><a href="/location/city/8" onclick="setCity(Seattle)"><img src="/img/seattle.jpg"></a></div><div class="tbilisi" style="display: inline-block;"><a href="/location/city/9" onclick="setCity(Tbilisi)"><img src="/img/Tbilisi.jpg"></a></div>
+</div>
 </body>
 <% } %>
 
