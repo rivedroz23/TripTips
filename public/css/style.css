@@ -29,6 +29,10 @@ html,body {
     font-family: 'Oswald', sans-serif;
     color: whitesmoke;
     font-size: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
   }
 
   .headline {
@@ -76,14 +80,16 @@ html,body {
   .home {
     background-image: url("/img/trip_tips_hero.jpeg");
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    min-width: 100vw;
+    /*background-repeat: no-repeat;
+    background-position: center center;*/
+  }
+  .homespacer {
+    height: 75vh;
   }
 
-  /*nav { display: flex;
-        justify-content: center;
-
-  }*/
 
   .centered1 {  display: flex;
     justify-content: center;
@@ -92,4 +98,9 @@ html,body {
   .centered2 {  display: flex;
     justify-content: center;
 
+  }
+
+  .headerspacer {
+    background: black;
+    height: 83px;
   }
