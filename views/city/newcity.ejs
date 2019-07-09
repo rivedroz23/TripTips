@@ -1,7 +1,15 @@
-<form action="/city/newcity" method="POST">
-    <input type="text" name="name" placeholder="Please enter city name...">
-    <input type="text" name="tagLine" placeholder="Please enter tagline">
-   
-    <input type="submit" value="new city">
-</form>
+<h2>New City</h2>
 
+<a href="/admin/index">Admin</a> | 
+<a href="/location/newlocation">New Location</a> | 
+<a href="/auth/logout">Logout</a> 
+<div class="form-group">
+<form action="/city/newcity" method="POST">
+    <br>
+    <label for="name">City Name&nbsp;&nbsp;&nbsp;</label>
+    <input name="name" type="text"><br><br>
+    <label for="tagLine" type="text">City Tagline</label>
+    <textarea rows="2" cols="50" name="tagLine"></textarea>
+</div>
+    <input class="btn btn-primary" type="submit" value="Create New City">
+</form>

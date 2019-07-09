@@ -20,18 +20,33 @@ router.get('/', function(req,res) {
 //Trying to create route that returns all locations with a specific cityId
 //Need to filter results on location page...instead of showing all locations, just
 //want to show those locatins for a specific city. 
+// router.get('/city/:cityId', function(req,res) {
+//     console.log(">>>>>>>>>>>>",req.params)
+//     db.location.findAll({
+//         where:{
+//     cityId: req.params.cityId
+//         }
+//     }).then(data=> {
+//         console.log(data)
+//         res.render('location/index', {location:data});
+//     })
+// });
+
 router.get('/city/:cityId', function(req,res) {
     console.log(">>>>>>>>>>>>",req.params)
-    db.location.findAll({
-        where:{
-    cityId: req.params.cityId
-        }
-    }).then(data=> {
-        console.log(data)
-        res.render('location/index', {location:data});
-    })
+    db.city.findByPk(parseInt(req.params.cityId))
+    .then(function(cityData) {
+        db.location.findAll({
+            where:{
+        cityId: req.params.cityId
+            }
+        }).then(data=> {
+            console.log(data)
+            res.render('location/index', {location:data, city:cityData});
+        })
+    });
+   
 });
-
 
 router.get('/newlocation',  function (req, res) {
     res.render('location/newlocation');
@@ -46,6 +61,8 @@ router.get('/:id', function(req,res) {
     });
 
 })
+
+
 
 
 router.post('/newlocation', function(req,res) {

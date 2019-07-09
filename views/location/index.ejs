@@ -1,10 +1,7 @@
 </br>
                 
 <button class = 'mapbtn2' onclick="window.location.href = '/';">Back</button>
-<button class = 'mapbtn' onclick="window.location.href = '/seattlemap';">View on map</button>
-<button class = 'mapbtn' onclick="window.location.href = '/tbilisimap';">View on map</button>
-
-
+<button class = 'mapbtn' onclick="window.location.href = '/map/<%= city.id %>';">View on map</button>
 
 
 <!--<ul>
@@ -19,3 +16,5 @@
             <img id="feed" src="/img/<%= location.headlineUrl %>" >
 </div>
        <% }); %>
+
+      

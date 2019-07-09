@@ -1,10 +1,20 @@
+<h2>New Location</h2>
+
+<a href="/admin/index">Admin</a> | 
+<a href="/city/newcity">New City</a> |
+<a href="/auth/logout">Logout</a><br><br>
+<div class="form-group">
 <form action="/location/newlocation" method="POST">
-    <input type="text" name="name" placeholder="Please enter location name...">
-    <input type="text" name="headlineText" placeholder="Please headlinetext...">
-    <input type="text" name="coordinates" placeholder="Please enter coordinates...">
-    <input type="text" name="headlineUrl" placeholder="Please enter url..">
-    <input type="text" name="cityId" placeholder="Please enter cityId..">
-
-    <input type="submit" value="new location">
+    <label for="name">Location Name</label>
+    <input type="text" name="name"><br>
+    <label for="headlineText">Headline Text&nbsp;&nbsp;</label>
+    <textarea rows="2" cols="50" name="headlineText"></textarea><br>
+    <label for="coordinates">Coordinates&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input type="text" name="coordinates"><br>
+    <label for="headlineUrl">Location URL&nbsp;&nbsp;</label>
+    <input type="text" name="headlineUrl"><br>
+    <label for="cityId">City ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input type="text" name="cityId">
+</div>
+    <input class="btn btn-primary" type="submit" value="Create New Location">
 </form>
-

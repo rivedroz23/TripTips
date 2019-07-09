@@ -2,6 +2,7 @@
 <% if (!currentUser) { %>
     <body class="home">
         <div class="homespacer"></div>
+        <div class="welcomeMessage">Real-time chat and community recommendations from travel experts all over the world!<br></div>
     <div class="centered1"><button class = 'mapbtn2' onclick="window.location.href = '/auth/signup';">Signup</button><br>&nbsp;<br></div>
     <div class="centered2"><button class = 'mapbtn' onclick="window.location.href = '/auth/login';">Login</button></div>
    <!-- <a href="/auth/signup">Signup</a> |
@@ -12,12 +13,10 @@
 
 <body class="nohome">
 <p>Hello, <%= currentUser.name %></p>
-<a href="/auth/logout">Logout</a> |
 <a href="/profile">Profile</a> |
-<!--<a href="/location/city/8" onclick="setCity(Seattle)">Seattle</a> |
-<a href="/location/city/9" onclick="setCity(Tbilisi)">Tbilisi</a> |-->
-<a href="/admin/index">Admin</a> 
-
+<a href="/admin/index">Admin</a> |
+<a href="/auth/logout">Logout</a>
+<br>
 
     <div>
 <div class="seattle" style="display: inline-block;" ><a href="/location/city/8" onclick="setCity(Seattle)"><img src="/img/seattle.jpg"></a></div><div class="tbilisi" style="display: inline-block;"><a href="/location/city/9" onclick="setCity(Tbilisi)"><img src="/img/Tbilisi.jpg"></a></div>

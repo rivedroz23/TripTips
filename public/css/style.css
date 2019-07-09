@@ -87,7 +87,7 @@ html,body {
     background-position: center center;*/
   }
   .homespacer {
-    height: 70vh;
+    height: 65vh;
   }
 
 
@@ -97,6 +97,13 @@ html,body {
   }
   .centered2 {  display: flex;
     justify-content: center;
+
+  }
+
+  .welcomeMessage {
+    color: white; 
+    font-size: 48px; 
+    text-align: center; 
 
   }
 

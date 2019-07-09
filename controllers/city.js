@@ -3,6 +3,7 @@ const db = require('../models');
 const methodOverride = require('method-override');
 const router = express.Router();
 
+
 router.get('/', function(req,res) {
     db.city.findAll().then(function(data) {
 
@@ -33,7 +34,6 @@ router.post('/newcity', function(req,res) {
        tagLine: req.body.tagLine
     }).then(function(data) {
         res.redirect('/city/newcity');
-    
     })
 });
 

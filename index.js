@@ -102,7 +102,7 @@ app.use('/auth', require('./controllers/auth'));
 app.use('/location', require('./controllers/location')); 
 app.use('/city', require('./controllers/city'));
 app.use('/admin', require('./controllers/admin')); 
-
+app.use('/map', require('./controllers/map')); 
 
 var server = app.listen(process.env.PORT || 3000);
 
