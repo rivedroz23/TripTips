@@ -33,6 +33,7 @@ html,body {
     top: 0;
     left: 0;
     width: 100vw;
+    z-index: 200;
   }
 
   .headline {
@@ -100,6 +101,31 @@ html,body {
 
   }
 
+  .seattle {
+
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 56px; 
+    z-index: 100;
+  }
+
+  .tbilisi {
+
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 56px; 
+    z-index: 100;
+  }
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   .welcomeMessage {
     color: white; 
     font-size: 48px; 
@@ -110,4 +136,9 @@ html,body {
   .headerspacer {
     background: black;
     height: 83px;
+  }
+
+  img {
+    z-index: -1000;
+
   }

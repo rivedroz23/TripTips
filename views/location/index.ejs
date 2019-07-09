@@ -11,7 +11,7 @@
 </ul> --> 
 
 <% location.forEach( function(location) { %>
-       <div class="headline"><h4><%= location.name %></h4>
+       <div class="headline"><h4><%= location.name %></h4><button class = "btn btn-primary" onclick="window.location.href = '/location/<%= location.id %>/edit';">Edit Location</button>
             <h2><%= location.headlineText %></h2>
             <img id="feed" src="/img/<%= location.headlineUrl %>" >
 </div>

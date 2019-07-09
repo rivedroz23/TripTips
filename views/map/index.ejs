@@ -2,7 +2,7 @@
 <button class = 'mapbtn' onclick="window.location.href = '/location/city/<%= city.id %>';">Back to feed</button>
 
 <h3><%= city.name  %></h3>
-<%= JSON.stringify(city)  %> 
+<!-- <%= JSON.stringify(locations)  %>  -->
 <div id="map">
 </div>
 
@@ -14,7 +14,7 @@
         .map(cp => cp
             .map(cs => parseFloat(cs)));
             
-    console.log(coordinates); 
+     
     
     /*let markerCoords = [
         [-122.331976,47.602331],
