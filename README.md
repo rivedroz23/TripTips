@@ -10,8 +10,11 @@ TripTips is a travel related app that allows you to check out the city that you 
 # Screen Shots
 
 ![alt Text](public/img/home.png)
+
 ![alt Text](public/img/city.png)
+
 ![alt Text](public/img/location.png)
+
 ![alt Text](public/img/map.png)
 
 
